@@ -1,0 +1,30 @@
+api_version = "2026-04"
+
+[[extensions]]
+name = "Quick Ship Delivery"
+handle = "quickship-delivery"
+
+uid = "c23783be-eb22-f5cb-1d41-4efba49541d001f3c7ed"
+
+type = "function"
+
+[[extensions.targeting]]
+target = "purchase.delivery-customization.run"
+input_query = "src/cart_delivery_options_transform_run.graphql"
+export = "run"
+
+[extensions.build]
+command = ""
+path = "dist/index.js"
+
+[extensions.ui]
+enable_create = false
+
+[[extensions.metafields]]
+namespace = "custom"
+key = "quickship"
+
+[[extensions.metafields]]
+namespace = "custom"
+key = "quickship_zips"
+

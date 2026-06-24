@@ -1,0 +1,37 @@
+api_version = "2026-04"
+
+[[extensions]]
+name = "quickship-checkout-ui"
+handle = "quickship-checkout-ui"
+type = "ui_extension"
+uid = "5b15aca7-02f3-fffb-5daa-5bf3d412b751e3659077"
+
+# Delivery selection UI — left side, before native shipping options
+[[extensions.targeting]]
+module = "./src/Checkout.jsx"
+target = "purchase.checkout.shipping-option-list.render-before"
+
+# Delivery estimate — checkout order summary right side
+[[extensions.targeting]]
+module = "./src/CartLineEstimate.jsx"
+target = "purchase.checkout.cart-line-item.render-after"
+
+# Delivery estimate — thank you page order summary right side
+[[extensions.targeting]]
+module = "./src/CartLineEstimate.jsx"
+target = "purchase.thank-you.cart-line-item.render-after"
+
+# Confirmation message — thank you page left side (needs placement in checkout editor)
+[[extensions.targeting]]
+module = "./src/ThankYouMessage.jsx"
+target = "purchase.thank-you.block.render"
+
+[extensions.capabilities]
+api_access = true
+
+[extensions.capabilities.customer_privacy]
+allow = true
+
+[[extensions.metafields]]
+namespace = "custom"
+key = "quickship_zips"

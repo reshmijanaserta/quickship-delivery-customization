@@ -1,0 +1,21 @@
+{
+  "name": "quickship-delivery-customization",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Quick Ship Delivery Customization Function for Shopify checkout",
+  "scripts": {
+    "shopify": "shopify",
+    "dev": "shopify app dev",
+    "deploy": "shopify app deploy",
+    "build": "shopify app build",
+    "generate": "shopify app generate"
+  },
+  "devDependencies": {
+    "@shopify/cli": "^3.0.0"
+  },
+  "dependencies": {
+    "@preact/signals": "^2.9.0",
+    "@shopify/ui-extensions": "2026.4.0",
+    "preact": "^10.29.1"
+  }
+}

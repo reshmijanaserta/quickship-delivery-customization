@@ -1,0 +1,35 @@
+query RunInput {
+  cart {
+    lines {
+      id
+      quantity
+      merchandise {
+        __typename
+        ... on ProductVariant {
+          id
+          title
+          quickship: metafield(namespace: "custom", key: "quickship") {
+            value
+          }
+          quickshipZips: metafield(namespace: "custom", key: "quickship_zips") {
+            value
+          }
+          product {
+            id
+            title
+          }
+        }
+      }
+    }
+    deliveryGroups {
+      id
+      deliveryAddress {
+        zip
+      }
+      deliveryOptions {
+        handle
+        title
+      }
+    }
+  }
+}
